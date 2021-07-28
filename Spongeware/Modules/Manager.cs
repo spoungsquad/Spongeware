@@ -28,6 +28,7 @@ namespace Spongeware.Modules
             modules.Add(new Speed());
             modules.Add(new Aimbot());
             modules.Add(new AirJump());
+            modules.Add(new Tracers());
 
             foreach (Spongeware.Module module in modules.ToArray())
             {

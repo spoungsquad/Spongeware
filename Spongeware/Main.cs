@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading;
 using UnityEngine;
 using Spongeware.Modules;
-using System.Windows.Forms;
 
 namespace Spongeware
 {
@@ -33,7 +32,7 @@ namespace Spongeware
 
         private void OnGUI()
         {
-            GUI.Label(new Rect(0, 0, 300, 40), "Spongeware: premium meme software");
+            Render.DrawString(new Vector2(0, Screen.height - 20), "Spongeware: premium meme software", Color.black, false);
             foreach (Module module in Manager.modules)
             {
                 if (module.enabled)

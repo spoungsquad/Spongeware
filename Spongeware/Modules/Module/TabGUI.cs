@@ -101,26 +101,34 @@ namespace Spongeware.Modules.Module
 
         public override void onRender()
         {
-            GUI.Box(new Rect(0, 15, 150, 20), "TabGUI");
-            float offset = 35;
-            float offset2 = 35;
+            Render.DrawBox(new Vector2(20, 20), new Vector2(80, categories.Length * 20), new Color(15, 15, 15));
+            Render.DrawBox(20, 20, 80, categories.Length * 20, new Color(0, 0, 0), 3);
+            //GUI.Box(new Rect(0, 15, 150, 20), "TabGUI");
+            float offset = 20;
+            float offset2 = 20;
             foreach (string category in categories)
             {
-                if (categories[currentCategory] == category)
-                    GUI.Box(new Rect(0, offset, 150, 20), category + ">>");
+                if (categories[currentCategory] == category && categorySelected)
+                    Render.DrawString(new Vector2(23, offset), category + ">>", new Color(0, 0, 0), false);
+                    //GUI.Box(new Rect(0, offset, 150, 20), category + ">>");
                 else
-                    GUI.Box(new Rect(0, offset, 150, 20), category);
+                    Render.DrawString(new Vector2(23, offset), category, new Color(0, 0, 0), false);
+                    //GUI.Box(new Rect(0, offset, 150, 20), category);
                 offset += 20;
             }
 
             if (moduleSelected)
             {
+                Render.DrawBox(new Vector2(100, 20), new Vector2(120, modules.Length * 20), new Color(15, 15, 15));
+                Render.DrawBox(100, 20, 120, modules.Length * 20, new Color(0, 0, 0), 3);
                 foreach (Spongeware.Module module in modules)
                 {
                     if (modules[currentModule] == module)
-                        GUI.Box(new Rect(150, offset2, 150, 20), ">" + module.name + "(" + module.enabled.ToString() + ")");
+                        Render.DrawString(new Vector2(103, offset2), ">" + module.name + " (" + module.enabled.ToString() + ")", new Color(0, 0, 0), false);
+                        //GUI.Box(new Rect(150, offset2, 150, 20), ">" + module.name + "(" + module.enabled.ToString() + ")");
                     else
-                        GUI.Box(new Rect(150, offset2, 150, 20), module.name + "(" + module.enabled.ToString() + ")");
+                        Render.DrawString(new Vector2(103, offset2), module.name + " (" + module.enabled.ToString() + ")", new Color(0, 0, 0), false);
+                        //GUI.Box(new Rect(150, offset2, 150, 20), module.name + "(" + module.enabled.ToString() + ")");
                     offset2 += 20;
                 }
             }

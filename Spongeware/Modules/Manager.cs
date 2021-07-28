@@ -29,11 +29,15 @@ namespace Spongeware.Modules
             modules.Add(new Aimbot());
             modules.Add(new AirJump());
             modules.Add(new Tracers());
+            modules.Add(new Arraylist());
 
             foreach (Spongeware.Module module in modules.ToArray())
             {
                 if (!categories.Contains(module.category))
                     categories.Add(module.category); // gang shit
+
+                if (module.name == "TabGUI" || module.name == "Arraylist")
+                    module.onEnable();
             }
         }
 

@@ -12,6 +12,11 @@ namespace Spongeware
         public string description;
         public bool enabled = false;
 
+
+        // for arraylist
+        public bool animating = false;
+        public int progress = 1;
+
         public PlayerMovement player()
         {
             return UnityEngine.Object.FindObjectOfType(typeof(PlayerMovement)) as PlayerMovement;

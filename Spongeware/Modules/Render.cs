@@ -21,10 +21,10 @@ namespace Spongeware.Modules
 		public static void DrawBox(Vector2 position, Vector2 size, bool centered = true)
 		{
 			var upperLeft = centered ? position - size / 2f : position;
-			GUI.DrawTexture(new Rect(position, size), Texture2D.whiteTexture, ScaleMode.StretchToFill);
+			GUI.DrawTexture(new Rect(position, size), Texture2D.blackTexture, ScaleMode.StretchToFill);
 		}
 
-		public static void DrawString(Vector2 position, string label, Color color, bool centered = true)
+		public static void DrawString(Vector2 position, string label, Color color, bool centered)
 		{
 			Color = color;
 			DrawString(position, label, centered);
@@ -72,6 +72,13 @@ namespace Spongeware.Modules
 			DrawLine(Point, new Vector2(Point.x, Point.y + height), color, thickness);
 			DrawLine(new Vector2(Point.x + width, Point.y + height), new Vector2(Point.x + width, Point.y), color, thickness);
 			DrawLine(new Vector2(Point.x + width, Point.y + height), new Vector2(Point.x, Point.y + height), color, thickness);
+		}
+
+		public static float GetTextWidth(string text)
+        {
+			var content = new GUIContent(text);
+			var size = StringStyle.CalcSize(content);
+			return size.x;
 		}
 	}
 

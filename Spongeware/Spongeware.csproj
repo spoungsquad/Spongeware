@@ -307,6 +307,7 @@
     <Compile Include="Module.cs" />
     <Compile Include="Modules\Module\Aimbot.cs" />
     <Compile Include="Modules\Module\AirJump.cs" />
+    <Compile Include="Modules\Module\Arraylist.cs" />
     <Compile Include="Modules\Module\FishESP.cs" />
     <Compile Include="Modules\Module\HighJump.cs" />
     <Compile Include="Modules\Module\InfAmmo.cs" />

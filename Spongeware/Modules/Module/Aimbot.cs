@@ -21,7 +21,8 @@ namespace Spongeware.Modules.Module
             foreach (Fish nextFish in fish)
             {
                 if ((nextFish.transform.position - player().transform.position).sqrMagnitude < 
-                    (currentFish.transform.position - player().transform.position).sqrMagnitude )
+                    (currentFish.transform.position - player().transform.position).sqrMagnitude 
+                    && !nextFish.agent.isStopped)
                 {
                     currentFish = nextFish;
                 }
@@ -31,7 +32,10 @@ namespace Spongeware.Modules.Module
 
         public override void onUpdate()
         {
-            Camera.current.transform.LookAt(GetClosestFish().transform);
+            // 5 is added to the y value because the real fish position is at their feet :/
+            Vector3 vector = new Vector3(GetClosestFish().transform.position.x, GetClosestFish().transform.position.y + 5, 
+                GetClosestFish().transform.position.z); // very large aimbot 
+            player().transform.LookAt(vector);
         }
     }
 }

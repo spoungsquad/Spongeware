@@ -19,7 +19,7 @@ namespace Spongeware.Modules
         public void InitModules()
         {
             modules.Add(new FishESP());
-            modules.Add(new LSD());
+            //modules.Add(new LSD());
             modules.Add(new InfAmmo());
             modules.Add(new TabGUI());
             modules.Add(new HighJump());
@@ -27,6 +27,7 @@ namespace Spongeware.Modules
             modules.Add(new LowGravity());
             modules.Add(new Speed());
             modules.Add(new Aimbot());
+            modules.Add(new AirJump());
 
             foreach (Spongeware.Module module in modules.ToArray())
             {

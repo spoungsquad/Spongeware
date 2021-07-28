@@ -42,9 +42,9 @@ namespace Spongeware.Modules.Module
                 if (vec1.z > 0f && vec2.z > 0f)
                 {
                     Vector3 vector3 = GUIUtility.ScreenToGUIPoint(vec1);
-                    vector3.y = (float)Screen.height - vector3.y;
+                    vector3.y = Screen.height - vector3.y;
                     Vector3 vector4 = GUIUtility.ScreenToGUIPoint(vec2);
-                    vector4.y = (float)Screen.height - vector4.y;
+                    vector4.y = Screen.height - vector4.y;
                     float num = Math.Abs(vector3.y - vector4.y) / 2.2f;
                     float num2 = num / 2f;
                     rect = new Rect(new Vector2(vector4.x - num2, vector4.y), new Vector2(num, vector3.y - vector4.y));
@@ -52,7 +52,6 @@ namespace Spongeware.Modules.Module
 
                 GUI.Box(rect, "");
             }
-            player().jumpHeight = 50;
         }
     }
 }

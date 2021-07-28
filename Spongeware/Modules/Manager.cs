@@ -26,6 +26,7 @@ namespace Spongeware.Modules
             modules.Add(new InfHealth());
             modules.Add(new LowGravity());
             modules.Add(new Speed());
+            modules.Add(new Aimbot());
 
             foreach (Spongeware.Module module in modules.ToArray())
             {

@@ -7,6 +7,4 @@ go to (spongeglock game directory)\SpongeGlock SquarePants_Data\Managed and add 
 build as x64 Release
 
 ## inject
-https://github.com/warbler/SharpMonoInjector
-
-set class name to Loader and method name to Load
+use the injector

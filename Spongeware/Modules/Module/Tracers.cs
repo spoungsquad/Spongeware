@@ -24,7 +24,7 @@ namespace Spongeware.Modules.Module
                 Vector3 w2s_vec1 = Camera.current.WorldToScreenPoint(vec1);
                 if (w2s_vec1.z > 1f)
                 {
-                    drawTracers(w2s_vec1, Color.red);
+                    drawTracers(w2s_vec1, Color.clear);
                 }
             }
         }

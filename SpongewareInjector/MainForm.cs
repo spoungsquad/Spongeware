@@ -180,5 +180,10 @@ namespace SpongewareInjector
             if (UnloadButton.Enabled)
                 UnloadDLL();
         }
+
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

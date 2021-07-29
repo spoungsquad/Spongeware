@@ -164,6 +164,7 @@ namespace SpongewareInjector
             this.Name = "MainForm";
             this.Text = "Spongeware Loader";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainForm_FormClosed);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Status.ResumeLayout(false);
             this.Status.PerformLayout();
             this.ResumeLayout(false);

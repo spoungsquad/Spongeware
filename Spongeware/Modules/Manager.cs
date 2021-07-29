@@ -31,6 +31,8 @@ namespace Spongeware.Modules
             modules.Add(new Tracers());
             modules.Add(new Arraylist());
             modules.Add(new NoFlash());
+            modules.Add(new NoFireRate());
+            modules.Add(new RapidFire());
 
             foreach (Spongeware.Module module in modules.ToArray())
             {

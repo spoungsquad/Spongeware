@@ -30,6 +30,7 @@ namespace Spongeware.Modules
             modules.Add(new AirJump());
             modules.Add(new Tracers());
             modules.Add(new Arraylist());
+            modules.Add(new NoFlash());
 
             foreach (Spongeware.Module module in modules.ToArray())
             {

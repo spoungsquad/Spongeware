@@ -317,6 +317,7 @@
     <Compile Include="Modules\Module\Speed.cs" />
     <Compile Include="Modules\Module\TabGUI.cs" />
     <Compile Include="Modules\Module\Tracers.cs" />
+    <Compile Include="Modules\Module\NoFlash.cs" />
     <Compile Include="Modules\Render.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -16,25 +16,11 @@ namespace Spongeware.Modules.Module
 
         public override void onUpdate()
         {
-            SetPrivatePropertyValue(player(), "fireTimer", 0);
+            PrivateAccess.SetPrivateProperty(player(), "fireTimer", 0);
             if (Input.GetKey(KeyCode.Q))
             {
                 MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp | MouseOperations.MouseEventFlags.LeftDown);
             }
         }
-
-        public void SetPrivatePropertyValue<T>(T obj, string propertyName, object newValue)
-        {
-            foreach (FieldInfo fi in obj.GetType().GetFields(BindingFlags.Instance | BindingFlags.NonPublic))
-            {
-                if (fi.Name.ToLower().Contains(propertyName.ToLower()))
-                {
-                    fi.SetValue(obj, newValue);
-                    break;
-                }
-            }
-
-        }
-
     }
 }

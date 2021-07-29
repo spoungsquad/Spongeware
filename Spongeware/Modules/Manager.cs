@@ -19,7 +19,7 @@ namespace Spongeware.Modules
         public void InitModules()
         {
             modules.Add(new FishESP());
-            //modules.Add(new LSD());
+            modules.Add(new LSD());
             modules.Add(new InfAmmo());
             modules.Add(new TabGUI());
             modules.Add(new HighJump());

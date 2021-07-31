@@ -2,9 +2,7 @@
 using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using UnityEngine;
-using UnityEngine.Rendering.PostProcessing;
+using Spongeware.Utils;
 
 namespace Spongeware.Modules.Module
 {
@@ -17,17 +15,31 @@ namespace Spongeware.Modules.Module
 
         public override void onUpdate()
         {
-            LSDTrigger trigger = UnityEngine.Object.FindObjectOfType(typeof(LSDTrigger)) as LSDTrigger;
+            try
+            {
+                LSDTrigger trigger = UnityEngine.Object.FindObjectOfType(typeof(LSDTrigger)) as LSDTrigger;
 
-            PrivateAccess.SetPrivateProperty(trigger, "inRange", true);
+                PrivateAccess.SetPrivateProperty(trigger, "inRange", true);
+            }
+            catch
+            {
+                // fix
+            }
         }
 
         public override void onDisable()
         {
             base.onDisable();
-            LSDTrigger trigger = UnityEngine.Object.FindObjectOfType(typeof(LSDTrigger)) as LSDTrigger;
+            try
+            {
+                LSDTrigger trigger = UnityEngine.Object.FindObjectOfType(typeof(LSDTrigger)) as LSDTrigger;
 
-            PrivateAccess.SetPrivateProperty(trigger, "inRange", false);
+                PrivateAccess.SetPrivateProperty(trigger, "inRange", false);
+            }
+            catch
+            {
+                // fix 2
+            }
         }
     }
 }

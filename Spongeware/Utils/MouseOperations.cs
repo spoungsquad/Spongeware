@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Spongeware.Modules
+namespace Spongeware.Utils
 {
     public class MouseOperations
     {

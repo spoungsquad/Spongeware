@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace Spongeware.Modules
+namespace Spongeware.Utils
 {
     class PrivateAccess
     {

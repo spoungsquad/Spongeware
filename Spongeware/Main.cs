@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
+﻿using Spongeware.Utils;
 using UnityEngine;
 using Spongeware.Modules;
 
@@ -13,7 +9,15 @@ namespace Spongeware
         Manager manager;
         private void Start()
         {
-            TextManager.Get().Talk("Spongeware is now injected!");
+            try
+            {
+                TextManager.Get().Talk("Spongeware is now injected!");
+            }
+            catch
+            {
+                // this should fix injecting in the menu
+            }
+            
             manager = new Manager();
             manager.InitModules();
         }

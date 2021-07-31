@@ -1,12 +1,12 @@
-﻿using System.Linq;
+﻿using Spongeware.Utils;
+using System.Linq;
 using UnityEngine;
-using Spongeware.Utils;
 
 namespace Spongeware.Modules.Module
 {
     internal class FishESP : Spongeware.Module
     {
-        public FishESP() : base("FishESP", "Visual", "Look at fish from anywhere")
+        public FishESP() : base("FishESP", "Visual", "Look at fish from anywhere", null)
         {
         }
 
@@ -33,13 +33,12 @@ namespace Spongeware.Modules.Module
                 Vector3 footPos = fish[i].transform.position;
                 Vector3 headPos; headPos.x = footPos.x; headPos.z = footPos.z; headPos.y = footPos.y + 6;
 
-                    Vector3 w2s_footPos = Camera.current.WorldToScreenPoint(footPos);
-                    Vector3 w2s_headPos = Camera.current.WorldToScreenPoint(headPos);
+                Vector3 w2s_footPos = Camera.current.WorldToScreenPoint(footPos);
+                Vector3 w2s_headPos = Camera.current.WorldToScreenPoint(headPos);
 
-                    if (w2s_footPos.z > 0)
-                    {
-                        drawBoxESP(w2s_footPos, w2s_headPos, Color.red);
-                    }
+                if (w2s_footPos.z > 0)
+                {
+                    drawBoxESP(w2s_footPos, w2s_headPos, Color.red);
                 }
             }
         }
@@ -51,8 +50,9 @@ namespace Spongeware.Modules.Module
                 float height = headPos.y - footPos.y;
                 float widthOffset = 2f;
                 float width = height / widthOffset;
+                Render.DrawBox(footPos.x - (width / 2), (float)Screen.height - footPos.y - height, width, height, color, 2f);
+            }
 
-            Render.DrawBox(footPos.x - (width / 2), (float)Screen.height - footPos.y - height, width, height, color, 2f);
         }
     }
 }

@@ -25,7 +25,7 @@ namespace Spongeware
             return UnityEngine.Object.FindObjectOfType(typeof(PlayerMovement)) as PlayerMovement;
         }
 
-        public Module(string name, string category, string description, Settings.Setting[] settings)
+        public Module(string name, string category, string description, Settings.Setting[] settings = null)
         {
             this.name = name;
             this.category = category;

@@ -6,7 +6,7 @@ namespace Spongeware.Modules.Module
 {
     class Arraylist : Spongeware.Module
     {
-        public Arraylist() : base("Arraylist", "Visual", "View all of your enabled modules in a cool way")
+        public Arraylist() : base("Arraylist", "Visual", "View all of your enabled modules in a cool way", null)
         {
             
         }

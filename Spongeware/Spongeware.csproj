@@ -320,6 +320,7 @@
     <Compile Include="Modules\Module\TabGUI.cs" />
     <Compile Include="Modules\Module\Tracers.cs" />
     <Compile Include="Modules\Module\NoFlash.cs" />
+    <Compile Include="Modules\Module\TriggerBot.cs" />
     <Compile Include="Modules\MouseOperations.cs" />
     <Compile Include="Modules\PrivateAccess.cs" />
     <Compile Include="Modules\Render.cs" />

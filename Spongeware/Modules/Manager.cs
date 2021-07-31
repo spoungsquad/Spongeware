@@ -33,6 +33,7 @@ namespace Spongeware.Modules
             modules.Add(new NoFlash());
             modules.Add(new NoFireRate());
             modules.Add(new RapidFire());
+            modules.Add(new TriggerBot());
 
             foreach (Spongeware.Module module in modules.ToArray())
             {

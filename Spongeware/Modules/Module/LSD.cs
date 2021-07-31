@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,33 +10,24 @@ namespace Spongeware.Modules.Module
 {
     class LSD : Spongeware.Module
     {
-        public LSD() : base("LSD", "Visual", "The LSD effect from Sandy's table")
+        public LSD() : base("ForceLSD", "Visual", "Forces the conditions for using LSD to be correct")
         {
 
         }
 
-        //public override void forever()
-        //{
-        //    // how 2 keybindo 102
-        //    if (Input.GetKeyDown(KeyCode.G))
-        //    {
-        //        if (enabled)
-        //            onDisable();
-        //        else
-        //            onEnable();
-        //    }
-        //}
-
-        public override void onEnable()
+        public override void onUpdate()
         {
-            //shit
-            base.onEnable();
+            LSDTrigger trigger = UnityEngine.Object.FindObjectOfType(typeof(LSDTrigger)) as LSDTrigger;
+
+            PrivateAccess.SetPrivateProperty(trigger, "inRange", true);
         }
 
         public override void onDisable()
         {
             base.onDisable();
+            LSDTrigger trigger = UnityEngine.Object.FindObjectOfType(typeof(LSDTrigger)) as LSDTrigger;
 
+            PrivateAccess.SetPrivateProperty(trigger, "inRange", false);
         }
     }
 }

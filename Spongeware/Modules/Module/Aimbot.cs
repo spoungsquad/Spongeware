@@ -15,14 +15,11 @@ namespace Spongeware.Modules.Module
 
             foreach (Fish nextFish in fish)
             {
-                if (GetClosestFish().wandering)//Check if fish is wandering to see if its dead
+                if ((nextFish.transform.position - player().transform.position).sqrMagnitude <
+               (currentFish.transform.position - player().transform.position).sqrMagnitude
+               && !nextFish.agent.isStopped)
                 {
-                    if ((nextFish.transform.position - player().transform.position).sqrMagnitude <
-                   (currentFish.transform.position - player().transform.position).sqrMagnitude
-                   && !nextFish.agent.isStopped)
-                    {
-                        currentFish = nextFish;
-                    }
+                    currentFish = nextFish;
                 }
             }
             return currentFish;
@@ -31,12 +28,10 @@ namespace Spongeware.Modules.Module
         public override void onUpdate()
         {
             // 5 is added to the y value because the real fish position is at their feet :/
-            if (GetClosestFish().wandering)//Check if fish is wandering to see if its dead
-            {
-                Vector3 vector = new Vector3(GetClosestFish().transform.position.x, GetClosestFish().transform.position.y + 5,
-              GetClosestFish().transform.position.z); // very large aimbot
-                player().transform.LookAt(vector);
-            }
+
+            Vector3 vector = new Vector3(GetClosestFish().transform.position.x, GetClosestFish().transform.position.y + 5,
+          GetClosestFish().transform.position.z); // very large aimbot
+            player().transform.LookAt(vector);
         }
     }
 }

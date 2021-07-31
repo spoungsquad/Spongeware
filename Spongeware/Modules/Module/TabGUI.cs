@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Spongeware.Utils;
 using UnityEngine;
 
 namespace Spongeware.Modules.Module
 {
     class TabGUI : Spongeware.Module
     {
-        public TabGUI() : base("TabGUI", "Visual", "This!")
+        public TabGUI() : base("TabGUI", "Visual", "This!", null)
         {
 
         }

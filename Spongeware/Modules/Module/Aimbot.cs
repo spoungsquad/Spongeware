@@ -4,13 +4,18 @@ namespace Spongeware.Modules.Module
 {
     internal class Aimbot : Spongeware.Module
     {
-        public Aimbot() : base("Aimbot", "Combat", "Locks your camera on the nearest fish")
+        public Aimbot() : base("Aimbot", "Combat", "Locks your camera on the nearest fish", 
+            new Settings.Setting[] {
+                new Settings.ModuleSettings.Keybind(KeyCode.None),
+                new Settings.ModuleSettings.Toggle(false)
+            }
+        ) // lol wtf
         {
         }
 
         public Fish GetClosestFish()
         {
-            Fish[] fish = UnityEngine.Object.FindObjectsOfType(typeof(Fish)) as Fish[];
+            Fish[] fish = Object.FindObjectsOfType(typeof(Fish)) as Fish[];
             Fish currentFish = fish[0];
 
             foreach (Fish nextFish in fish)

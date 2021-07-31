@@ -17,16 +17,20 @@ namespace Spongeware
         public bool animating = false;
         public int progress = 1;
 
+        // settings
+        public Settings.Setting[] settings;
+
         public PlayerMovement player()
         {
             return UnityEngine.Object.FindObjectOfType(typeof(PlayerMovement)) as PlayerMovement;
         }
 
-        public Module(string name, string category, string description)
+        public Module(string name, string category, string description, Settings.Setting[] settings)
         {
             this.name = name;
             this.category = category;
             this.description = description;
+            this.settings = settings;
         }
 
         public virtual void onEnable()

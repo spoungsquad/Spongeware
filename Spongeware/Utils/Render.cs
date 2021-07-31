@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Spongeware.Modules
+namespace Spongeware.Utils
 {
 	public class Render : MonoBehaviour
 	{

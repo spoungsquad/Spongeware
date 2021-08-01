@@ -29,7 +29,10 @@ namespace Spongeware.Modules.Module
 
         public void drawTracers(Vector3 pos, Color color)
         {
-            Render.DrawLine(new Vector2((float)(Screen.width / 2), (float)(Screen.height / 2)), new Vector2(pos.x, (float)Screen.height - pos.y), color, 2f);
+            if (fish.FirstOrDefault().wandering)//Check if fish is wandering to see if its dead
+            {
+                Render.DrawLine(new Vector2((float)(Screen.width / 2), (float)(Screen.height / 2)), new Vector2(pos.x, (float)Screen.height - pos.y), color, 2f);
+            }
         }
     }
 }

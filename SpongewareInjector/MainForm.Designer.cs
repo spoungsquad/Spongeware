@@ -45,10 +45,10 @@ namespace SpongewareInjector
             // TitleText
             // 
             this.TitleText.AutoSize = true;
-            this.TitleText.Font = new System.Drawing.Font("Segoe UI", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TitleText.Font = new System.Drawing.Font("Comic Sans MS", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TitleText.Location = new System.Drawing.Point(0, 0);
             this.TitleText.Name = "TitleText";
-            this.TitleText.Size = new System.Drawing.Size(188, 40);
+            this.TitleText.Size = new System.Drawing.Size(180, 40);
             this.TitleText.TabIndex = 0;
             this.TitleText.Text = "Spongeware";
             // 

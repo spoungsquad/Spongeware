@@ -2,7 +2,7 @@
 {
     class Speed : Spongeware.Module
     {
-        public Speed() : base("Speed", "Movement", "Run really fast.")
+        public Speed() : base("Speed", "Movement", "Run really fast.", null)
         {
         }
 

@@ -1,14 +1,21 @@
-﻿using Spongeware.Utils;
+﻿using System.Runtime.InteropServices;
+using Spongeware.Utils;
 using UnityEngine;
+using System.Diagnostics;
 using Spongeware.Modules;
+using System;
 
 namespace Spongeware
 {
     public class Main : MonoBehaviour
     {
         Manager manager;
+
+        
         private void Start()
         {
+            if (DebugConsole.IsDevEnvironment())
+                DebugConsole.Write("A developer environment was detected, so a console was allocated for debug purposes.");
             try
             {
                 TextManager.Get().Talk("Spongeware is now injected!");
@@ -17,30 +24,58 @@ namespace Spongeware
             {
                 // this should fix injecting in the menu
             }
-            
+
+            DebugConsole.Write("Injected! Initializing modules...");
+
             manager = new Manager();
             manager.InitModules();
+
+            DebugConsole.Write("All modules initialized successfully.");
         }
 
         private void Update()
         {
-            foreach (Module module in Manager.modules)
+            try
             {
-                module.forever();
-                if (module.enabled)
+                foreach (Module module in Manager.modules)
                 {
-                    module.onUpdate();
+                    module.forever();
+                    if (module.enabled)
+                    {
+                        module.onUpdate();
+                    }
                 }
+            }
+            catch (Exception e)
+            {
+                foreach (Module mod in Manager.modules)
+                {
+                    mod.enabled = false; // we do this instead of mod.onDisable() in case that is why it crashed
+                }
+                DebugConsole.Write("Spongeware ran into a problem and needs to exit.\nException info:\n" + e.ToString());
+                Loader.Unload();
             }
         }
 
         private void OnGUI()
         {
-            Render.DrawString(new Vector2(0, Screen.height - 20), "Spongeware: premium meme software", Color.black, false);
-            foreach (Module module in Manager.modules)
+            try
             {
-                if (module.enabled)
-                    module.onRender();
+                Render.DrawString(new Vector2(0, Screen.height - 20), "Spongeware: premium meme software", Color.black, false);
+                foreach (Module module in Manager.modules)
+                {
+                    if (module.enabled)
+                        module.onRender();
+                }
+            }
+            catch (Exception e)
+            {
+                foreach (Module mod in Manager.modules)
+                {
+                    mod.enabled = false; // we do this instead of mod.onDisable() in case that is why it crashed
+                }
+                DebugConsole.Write("Spongeware ran into a problem. All modules have been disabled. \n Exception info:\n" + e.ToString());
+                Loader.Unload();
             }
         }
     }

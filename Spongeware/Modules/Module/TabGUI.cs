@@ -5,7 +5,7 @@ namespace Spongeware.Modules.Module
 {
     class TabGUI : Spongeware.Module
     {
-        public TabGUI() : base("TabGUI", "Visual", "This!", null)
+        public TabGUI() : base("TabGUI", "Visual", "This!")
         {
 
         }

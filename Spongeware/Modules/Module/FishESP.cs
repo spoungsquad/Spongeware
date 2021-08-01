@@ -30,15 +30,24 @@ namespace Spongeware.Modules.Module
 
             for (int i = 0; i < fish.Length; i++)
             {
+                DebugConsole.Write("fishe1");
                 Vector3 footPos = fish[i].transform.position;
                 Vector3 headPos; headPos.x = footPos.x; headPos.z = footPos.z; headPos.y = footPos.y + 6;
+
+                DebugConsole.Write("fishe2");
 
                 Vector3 w2s_footPos = Camera.current.WorldToScreenPoint(footPos);
                 Vector3 w2s_headPos = Camera.current.WorldToScreenPoint(headPos);
 
-                if (w2s_footPos.z > 0 && !fish[i].agent.isStopped)
+                DebugConsole.Write("fishe3");
+
+                if (fish[i] != null)
                 {
-                    drawBoxESP(w2s_footPos, w2s_headPos, Color.red);
+                    if (w2s_footPos.z > 0 && !fish[i].agent.isStopped)
+                    {
+                        DebugConsole.Write("fishe4");
+                        drawBoxESP(w2s_footPos, w2s_headPos, Color.red);
+                    }
                 }
             }
         }

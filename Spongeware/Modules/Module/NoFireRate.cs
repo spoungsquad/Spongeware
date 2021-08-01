@@ -4,7 +4,7 @@ namespace Spongeware.Modules.Module
 {
     class NoFireRate : Spongeware.Module
     {
-        public NoFireRate() : base("NoFireRate", "Combat", "No shooting speed limit", null)
+        public NoFireRate() : base("NoFireRate", "Combat", "Removes the fire rate")
         {
 
         }

@@ -5,7 +5,7 @@ namespace Spongeware.Modules.Module
 {
     class TriggerBot : Spongeware.Module
     {
-        public TriggerBot() : base("TriggerBot", "Combat", "Auto ", null)
+        public TriggerBot() : base("TriggerBot", "Combat", "Automatcally shoots if you're looking at a shootable object")
         {
         }
 

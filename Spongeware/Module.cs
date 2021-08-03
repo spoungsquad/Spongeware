@@ -25,6 +25,11 @@ namespace Spongeware
             return UnityEngine.Object.FindObjectOfType(typeof(PlayerMovement)) as PlayerMovement;
         }
 
+        public Fish fishClass()
+        {
+            return UnityEngine.Object.FindObjectOfType(typeof(Fish)) as Fish;
+        }
+
         public Module(string name, string category, string description/*, Settings.Setting[] settings*/)
         {
             this.name = name;

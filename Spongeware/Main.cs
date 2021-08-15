@@ -57,11 +57,15 @@ namespace Spongeware
             }
         }
 
+        string val = "test";
+
         private void OnGUI()
         {
             try
             {
                 Render.DrawString(new Vector2(0, Screen.height - 20), "Spongeware: premium meme software", Color.black, false);
+                val = Render.DrawTextBox(new Rect(0, 0, 100, 20), val);
+                //Render.DrawString(new Vector2(0, 0), val, false);
                 foreach (Module module in Manager.modules)
                 {
                     if (module.enabled)

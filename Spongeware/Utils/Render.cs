@@ -80,6 +80,24 @@ namespace Spongeware.Utils
 			var size = StringStyle.CalcSize(content);
 			return size.x;
 		}
+
+		public static bool DrawButton(Rect rect, string text, Color textColor, Color buttonColor)
+        {
+			DrawBoxOutline(rect.position, rect.width + 6, rect.height, buttonColor, 3);
+			DrawString(rect.position + new Vector2(3, 0), text, textColor, false); // padding!
+			return GUI.Button(rect, "", GUI.skin.label); // invis button
+        }
+
+		public static float DrawHSlider(Rect rect, float value, float min, float max)
+        {
+			return GUI.HorizontalSlider(rect, value, min, max);
+        }
+
+		public static string DrawTextBox(Rect rect, string text)
+        {
+			Color = Color.white;
+			return GUI.TextField(rect, text);
+        }
 	}
 
 }
